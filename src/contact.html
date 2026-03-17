@@ -14,6 +14,16 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
+      .root{
+         --dark: #0a0a0f;
+  --blue: #1a1a2e;
+  --purple: #16213e;
+  --starlight: #e94560;
+  --cyan: #0f3460;
+  --primary: #eaeaea;
+  --secondary: #a0a0a0;
+  --glow: rgba(233, 69, 96, 0.3);
+      }
       @keyframes fadeInUp {
         0% {
           opacity: 0;
@@ -75,118 +85,376 @@
     class="text-[#eaeaea] font-['Inter'] bg-[#050505] min-h-screen relative overflow-x-hidden flex flex-col"
   >
     <!--header-->
-<header>
-<div class="relative z-10 w-full flex flex-col flex-grow">
-  <nav class="flex justify-between items-center px-6 md:px-8 py-8 max-w-7xl mx-auto w-full">
-    <a href="index.html" class="flex items-center gap-2 cursor-pointer hover:scale-105 transition-transform group">
-      <span class="relative flex items-center justify-center w-10 h-9 rounded-full bg-blue overflow-hidden shadow-inner transition-all">
-        <span class="absolute inset-0 bg-gradient-to-tr from-pink-500 to-transparent opacity-50"></span>
-        <span class="relative text-3xl transform -rotate-12 group-hover:rotate-0 transition-transform">🚀</span>
-      </span>
-      <span class="font-['Space_Grotesk'] font-bold text-xl tracking-wide text-white">COSMOS</span>
-    </a>
-
-    <div id="menuBtn" class="md:hidden text-white hover:text-[#e94560] cursor-pointer transition-colors z-110">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-7 h-7">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-      </svg>
-    </div>
-
-    <div class="hidden md:flex gap-8 text-sm font-medium">
-      <a href="index.html" class="text-[#a0a0a0] hover:text-[#eaeaea] transition-colors pb-1">Home</a>
-      <a href="missions.html" class="text-[#a0a0a0]  pb-1">Missions</a>
-      <a href="spacecraft.html" class="text-[#a0a0a0] hover:text-[#eaeaea] transition-colors pb-1">Spacecraft</a>
-      <a href="gallery.html" class="text-[#a0a0a0] hover:text-[#eaeaea] transition-colors pb-1">Gallery</a>
-      <a href="contact.html" class=" hover:text-[#eaeaea] border-b-2 border-[#e94560] transition-colors pb-1">Contact</a>
-    </div>
-  </nav>
-</div>
-
-<div id="mobileMenu" 
-     class="fixed top-20 right-6 w-64 bg-dark/95 border border-white/10 backdrop-blur-xl z-[100] 
-            flex flex-col rounded-2xl p-6 gap-6 text-lg font-bold text-white shadow-2xl
-            invisible opacity-0 -translate-y-4 transition-all duration-300 ease-out">
-  <a href="index.html" class="hover:text-[#e94560] transition-colors border-b border-white/5 pb-2">Home</a>
-  <a href="missions.html" class=" hover:text-[#e94560] border-b border-white/5 pb-2">Missions</a>
-  <a href="spacecraft.html" class="hover:text-[#e94560] transition-colors border-b border-white/5 pb-2">Spacecraft</a>
-  <a href="gallery.html" class="hover:text-[#e94560] transition-colors border-b border-white/5 pb-2">Gallery</a>
-  <a href="contact.html" class="text-[#e94560]  transition-colors">Contact</a>
-</div>
-</header>
-
-
-<!--footer-->
-      <footer class="w-full mt-auto bg-dark pt-12 pb-8 px-6 md:px-8">
-        <div class="max-w-6xl mx-auto">
-         <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-10">
-      <a
-          href="index.html"
-          class="flex items-center gap-2 cursor-pointer hover:scale-105 transition-transform"
+    <header>
+      <div class="relative z-10 w-full flex flex-col flex-grow">
+        <nav
+          class="flex justify-between items-center px-6 md:px-8 py-8 max-w-7xl mx-auto w-full"
         >
+          <a
+            href="index.html"
+            class="flex items-center gap-2 cursor-pointer hover:scale-105 transition-transform group"
+          >
             <span
-              class="relative text-3xl transform -rotate-12 group-hover:rotate-0 transition-transform"
-              >🚀</span>
-          <span class=" font-['Space_Grotesk'] font-bold text-xl tracking-wide">COSMOS</span>
-        </a>
-      <nav class="footer-nav flex flex-wrap justify-center gap-6 text-sm text-gray-400">
-        <a href="./index.html" class="hover:text-[#e94560] transition">Home</a>
-        <a href="./missions.html" class="hover:text-[#e94560] transition">Missions</a>
-        <a href="spacecraft.html" class="hover:text-[#e94560] transition">Spacecraft</a>
-        <a href="./contact.html" class="hover:text-[#e94560] transition">Gallery</a>
-      </nav>
-      <div class="footer-social flex gap-4">
-        <div class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#e94560] cursor-pointer transition border border-white/10">
-          <span class="text-xs font-bold text-gray-400">𝕏</span>
-        </div>
-        <div class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#e94560] cursor-pointer transition border border-white/10">
-          <span class="text-xs font-bold text-gray-400">in</span>
-        </div>
-        <div class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#e94560] cursor-pointer transition border border-white/10">
-          <span class="text-xs">📷</span>
-        </div>
-        <div class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#e94560] cursor-pointer transition border border-white/10">
-          <span class="text-xs">▶</span>
+              class="relative flex items-center justify-center w-10 h-9 rounded-full bg-blue overflow-hidden shadow-inner transition-all"
+            >
+              <span
+                class="absolute inset-0 bg-gradient-to-tr from-pink-500 to-transparent opacity-50"
+              ></span>
+              <span
+                class="relative text-3xl transform -rotate-12 group-hover:rotate-0 transition-transform"
+                >🚀</span
+              >
+            </span>
+            <span
+              class="font-['Space_Grotesk'] font-bold text-xl tracking-wide text-white"
+              >COSMOS</span
+            >
+          </a>
+
+          <div
+            id="menuBtn"
+            class="md:hidden text-white hover:text-[#e94560] cursor-pointer transition-colors z-110"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              class="w-7 h-7"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
+            </svg>
+          </div>
+
+          <div class="hidden md:flex gap-8 text-sm font-medium">
+            <a
+              href="index.html"
+              class="text-[#a0a0a0] hover:text-[#eaeaea] transition-colors pb-1"
+              >Home</a
+            >
+            <a href="missions.html" class="text-[#a0a0a0] pb-1">Missions</a>
+            <a
+              href="spacecraft.html"
+              class="text-[#a0a0a0] hover:text-[#eaeaea] transition-colors pb-1"
+              >Spacecraft</a
+            >
+            <a
+              href="gallery.html"
+              class="text-[#a0a0a0] hover:text-[#eaeaea] transition-colors pb-1"
+              >Gallery</a
+            >
+            <a
+              href="contact.html"
+              class="hover:text-[#eaeaea] border-b-2 border-[#e94560] transition-colors pb-1"
+              >Contact</a
+            >
+          </div>
+        </nav>
+      </div>
+
+      <div
+        id="mobileMenu"
+        class="fixed top-20 right-6 w-64 bg-dark/95 border border-white/10 backdrop-blur-xl z-[100] flex flex-col rounded-2xl p-6 gap-6 text-lg font-bold text-white shadow-2xl invisible opacity-0 -translate-y-4 transition-all duration-300 ease-out"
+      >
+        <a
+          href="index.html"
+          class="hover:text-[#e94560] transition-colors border-b border-white/5 pb-2"
+          >Home</a
+        >
+        <a
+          href="missions.html"
+          class="hover:text-[#e94560] border-b border-white/5 pb-2"
+          >Missions</a
+        >
+        <a
+          href="spacecraft.html"
+          class="hover:text-[#e94560] transition-colors border-b border-white/5 pb-2"
+          >Spacecraft</a
+        >
+        <a
+          href="gallery.html"
+          class="hover:text-[#e94560] transition-colors border-b border-white/5 pb-2"
+          >Gallery</a
+        >
+        <a href="contact.html" class="text-[#e94560] transition-colors"
+          >Contact</a
+        >
+      </div>
+    </header>
+  <body
+    class="text-[#eaeaea] font-['Inter'] bg-[#050505] min-h-screen relative overflow-x-hidden flex flex-col"
+  >
+<section
+      class="relative z-10 w-full pt-16 pb-16 flex flex-col items-center text-center px-6 animate-fade-in-up"
+    >
+      <h1
+        class="font-['Inter'] text-4xl md:text-5xl lg:text-[56px] font-bold text-white mb-6 tracking-tight"
+      >
+        Get in Touch
+      </h1>
+      <p
+        class="text-[#8e93a4] text-[15px] md:text-base max-w-2xl leading-relaxed"
+      >
+        Connect with our team for mission updates, educational resources, or
+partnership opportunities.
+      </p>
+    </section>
+    <main
+      class="relative z-10 max-w-5xl mx-auto px-6 md:px-8 pb-24 w-full flex flex-col md:flex-row gap-16 md:gap-24"
+    >
+      <div class="w-full md:w-1/2 flex flex-col animate-fade-in-up delay-100">
+        <h2
+          class="font-['Inter'] text-2xl font-bold text-white mb-4 tracking-tight"
+        >
+          Let's Explore Together
+        </h2>
+        <p class="text-[#8e93a4] text-[15px] leading-relaxed mb-10 max-w-sm">
+          Whether you're a student, educator, or space enthusiast, we'd love to
+          hear from you.
+        </p>
+
+        <div class="flex flex-col gap-8">
+          <div class="flex items-start gap-5">
+            <div
+              class="w-10 h-10 rounded-xl bg-[#141622] border border-white/5 flex items-center justify-center text-[#ff4d6d] shrink-0"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-5 h-5"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-white font-semibold text-[15px] mb-1">
+                Mission Control
+              </h3>
+              <p class="text-[#8e93a4] text-sm leading-relaxed">
+                Johnson Space Center<br />Houston, Texas 77058
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-5">
+            <div
+              class="w-10 h-10 rounded-xl bg-[#141622] border border-white/5 flex items-center justify-center text-[#ff4d6d] shrink-0"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-5 h-5"
+              >
+                <path
+                  d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"
+                />
+                <path
+                  d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"
+                />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-white font-semibold text-[15px] mb-1">Email</h3>
+              <p class="text-[#8e93a4] text-sm">missions@cosmos.space</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-5">
+            <div
+              class="w-10 h-10 rounded-xl bg-[#141622] border border-white/5 flex items-center justify-center text-[#ff4d6d] shrink-0"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-5 h-5"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-white font-semibold text-[15px] mb-1">Social</h3>
+              <p class="text-[#8e93a4] text-sm">
+                @CosmosSpace on all platforms
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <hr class="border-white/10 mb-8" />
-    <div class="text-center text-xs text-gray-500">
-        <p>© 2026 Cosmos Space Exploration. All rights reserved.</p>
-        <p class="mt-2 italic text-gray-600">Designed by Vince</p>
-    </div>
-  </div>
-</footer>
-<!--script-->
+
+      <div class="w-full md:w-1/2 animate-fade-in-up delay-200">
+        <form
+          class="bg-[#141622]/90 backdrop-blur-md rounded-[24px] p-6 md:p-8 border border-white/5 shadow-[0_8px_30px_rgba(0,0,0,0.5)] flex flex-col gap-5"
+        >
+          <div class="flex flex-col gap-2">
+            <label for="name" class="text-xs text-[#8e93a4] font-medium ml-1"
+              >Full Name</label
+            >
+            <input
+              type="text"
+              id="name"
+              placeholder="John Astronaut"
+              class="bg-[#0c0d12] border border-white/5 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-white/20 transition-colors w-full"
+            />
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <label for="email" class="text-xs text-[#8e93a4] font-medium ml-1"
+              >Email Address</label
+            >
+            <input
+              type="email"
+              id="email"
+              placeholder="john@example.com"
+              class="bg-[#0c0d12] border border-white/5 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-white/20 transition-colors w-full"
+            />
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <label for="subject" class="text-xs text-[#8e93a4] font-medium ml-1"
+              >Subject</label
+            >
+            <input
+              type="text"
+              id="subject"
+              placeholder="Mission Inquiry"
+              class="bg-[#0c0d12] border border-white/5 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-white/20 transition-colors w-full"
+            />
+          </div>
+
+          <div class="flex flex-col gap-2 mb-2">
+            <label for="message" class="text-xs text-[#8e93a4] font-medium ml-1"
+              >Message</label
+            >
+            <textarea
+              id="message"
+              rows="4"
+              placeholder="Tell us about your space interests..."
+              class="bg-[#0c0d12] border border-white/5 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-white/20 transition-colors w-full resize-none"
+            ></textarea>
+          </div>
+
+          <button
+            type="button"
+            class="w-full bg-[#ff4d6d] text-white py-3.5 rounded-full text-[15px] font-semibold hover:bg-[#ff3355] shadow-[0_0_25px_rgba(255,77,109,0.35)] transition-all flex items-center justify-center gap-2 tracking-wide mt-2"
+          >
+            Send Message 🚀
+          </button>
+        </form>
+      </div>
+    </main>
+
+  
+    <!--footer-->
+    <footer class="w-full mt-auto bg-dark pt-12 pb-8 px-6 md:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center gap-8 mb-10"
+        >
+          <a
+            href="index.html"
+            class="flex items-center gap-2 cursor-pointer hover:scale-105 transition-transform"
+          >
+            <span
+              class="relative text-3xl transform -rotate-12 group-hover:rotate-0 transition-transform"
+              >🚀</span
+            >
+            <span class="font-['Space_Grotesk'] font-bold text-xl tracking-wide"
+              >COSMOS</span
+            >
+          </a>
+          <nav
+            class="footer-nav flex flex-wrap justify-center gap-6 text-sm text-gray-400"
+          >
+            <a href="./index.html" class="hover:text-[#e94560] transition"
+              >Home</a
+            >
+            <a href="./missions.html" class="hover:text-[#e94560] transition"
+              >Missions</a
+            >
+            <a href="spacecraft.html" class="hover:text-[#e94560] transition"
+              >Spacecraft</a
+            >
+            <a href="./contact.html" class="hover:text-[#e94560] transition"
+              >Gallery</a
+            >
+          </nav>
+          <div class="footer-social flex gap-4">
+            <div
+              class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#e94560] cursor-pointer transition border border-white/10"
+            >
+              <span class="text-xs font-bold text-gray-400">𝕏</span>
+            </div>
+            <div
+              class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#e94560] cursor-pointer transition border border-white/10"
+            >
+              <span class="text-xs font-bold text-gray-400">in</span>
+            </div>
+            <div
+              class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#e94560] cursor-pointer transition border border-white/10"
+            >
+              <span class="text-xs">📷</span>
+            </div>
+            <div
+              class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#e94560] cursor-pointer transition border border-white/10"
+            >
+              <span class="text-xs">▶</span>
+            </div>
+          </div>
+        </div>
+        <hr class="border-white/10 mb-8" />
+        <div class="text-center text-xs text-gray-500">
+          <p>© 2026 Cosmos Space Exploration. All rights reserved.</p>
+          <p class="mt-2 italic text-gray-600">Designed by Vince</p>
+        </div>
+      </div>
+    </footer>
+    <!--script-->
     <script src="js/script.js"></script>
-<script>
-  const menuBtn = document.getElementById('menuBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
+    <script>
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
 
-  menuBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    
-    const isOpen = mobileMenu.classList.contains('opacity-100');
+      menuBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
 
-    if (isOpen) {
-      closeNav();
-    } else {
-      openNav();
-    }
-  });
-  function openNav() {
-    mobileMenu.classList.remove('invisible', 'opacity-0', '-translate-y-4');
-    mobileMenu.classList.add('opacity-100', 'translate-y-0');
-  }
-  function closeNav() {
-    mobileMenu.classList.add('invisible', 'opacity-0', '-translate-y-4');
-    mobileMenu.classList.remove('opacity-100', 'translate-y-0');
-  }
-  window.addEventListener('click', () => {
-    closeNav();
-  });
-  mobileMenu.addEventListener('click', (e) => {
-    e.stopPropagation();
-  });
-</script>
+        const isOpen = mobileMenu.classList.contains("opacity-100");
+
+        if (isOpen) {
+          closeNav();
+        } else {
+          openNav();
+        }
+      });
+      function openNav() {
+        mobileMenu.classList.remove("invisible", "opacity-0", "-translate-y-4");
+        mobileMenu.classList.add("opacity-100", "translate-y-0");
+      }
+      function closeNav() {
+        mobileMenu.classList.add("invisible", "opacity-0", "-translate-y-4");
+        mobileMenu.classList.remove("opacity-100", "translate-y-0");
+      }
+      window.addEventListener("click", () => {
+        closeNav();
+      });
+      mobileMenu.addEventListener("click", (e) => {
+        e.stopPropagation();
+      });
+    </script>
   </body>
 </html>

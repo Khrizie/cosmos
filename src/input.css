@@ -11,123 +11,140 @@
   --color-glow: rgba(233, 69, 96, 0.3);
 }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-font-family:"Inter","Space Grotesk";
-background:var(--deep-space);
-color:var(--text-primary);
-overflow-x:hidden;
-line-height:1.6;
+body {
+  font-family: "Inter", "Space Grotesk";
+  background: var(--deep-space);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  line-height: 1.6;
 }
 
-h1,h2,h3,h4,h5,h6{
-font-family:"Space Grotesk","Inter";
-font-weight:700;
-letter-spacing:-0.02em;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Space Grotesk", "Inter";
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
-.stars-bg{
-position:fixed;
-top:0;
-left:0;
-width:200vw;
-height:200vh;
-z-index:0;
-pointer-events:none;
+.stars-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200vw;
+  height: 200vh;
+  z-index: 0;
+  pointer-events: none;
 
-background-image:
-radial-gradient(1px 1px at 15% 20%,#fff,transparent),
-radial-gradient(1px 1px at 30% 65%,#fff,transparent),
-radial-gradient(2px 2px at 50% 35%,#fff,transparent),
-radial-gradient(1px 1px at 65% 80%,#fff,transparent),
-radial-gradient(1px 1px at 85% 15%,#fff,transparent),
-radial-gradient(2px 2px at 90% 60%,#fff,transparent),
-radial-gradient(1px 1px at 10% 85%,#fff,transparent);
+  background-image:
+    radial-gradient(1px 1px at 15% 20%, #fff, transparent),
+    radial-gradient(1px 1px at 30% 65%, #fff, transparent),
+    radial-gradient(2px 2px at 50% 35%, #fff, transparent),
+    radial-gradient(1px 1px at 65% 80%, #fff, transparent),
+    radial-gradient(1px 1px at 85% 15%, #fff, transparent),
+    radial-gradient(2px 2px at 90% 60%, #fff, transparent),
+    radial-gradient(1px 1px at 10% 85%, #fff, transparent);
 
-background-size:250px 250px;
-opacity:.3;
+  background-size: 250px 250px;
+  opacity: 0.3;
 
-animation:moveStars 20s linear infinite;
+  animation: moveStars 20s linear infinite;
 }
 
-@keyframes moveStars{
-from{transform:translateY(0)}
-to{transform:translateY(-100px)}
+@keyframes moveStars {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100px);
+  }
 }
 
-@keyframes fadeInUp{
-0%{
-opacity:0;
-transform:translateY(30px);
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-100%{
-opacity:1;
-transform:translateY(0);
+.delay-100 {
+  animation-delay: 100ms;
 }
+.delay-200 {
+  animation-delay: 200ms;
 }
-
-.delay-100{animation-delay:100ms}
-.delay-200{animation-delay:200ms}
-.delay-300{animation-delay:300ms}
-.neon-link{transition:all .3s ease;}
-.neon-link:hover{color:var(--starlight);
-text-shadow:
-0 0 5px var(--starlight),
-0 0 10px var(--starlight),
-0 0 20px var(--starlight);
+.delay-300 {
+  animation-delay: 300ms;
 }
-
-.neon-btn{
-transition:all .3s ease;
+.neon-link {
+  transition: all 0.3s ease;
 }
-
-.neon-btn:hover{
-transform:translateY(-3px);
-box-shadow:
-0 0 10px var(--starlight),
-0 0 20px var(--starlight),
-0 0 40px var(--glow);
+.neon-link:hover {
+  color: var(--starlight);
+  text-shadow:
+    0 0 5px var(--starlight),
+    0 0 10px var(--starlight),
+    0 0 20px var(--starlight);
 }
 
-.stat-card{
-transition:all .35s ease;
-border:1px solid rgba(255,255,255,.05);
+.neon-btn {
+  transition: all 0.3s ease;
 }
 
-.stat-card:hover{
-transform:translateY(-6px) scale(1.03);
-border-color:var(--starlight);
-box-shadow:
-0 0 15px rgba(233,69,96,.5),
-0 0 40px rgba(233,69,96,.3);
+.neon-btn:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 0 10px var(--starlight),
+    0 0 20px var(--starlight),
+    0 0 40px var(--glow);
 }
 
-.glow-divider{
-
-height:1px;
-width:100%;
-background:linear-gradient(
-90deg,
-transparent,
-var(--starlight),
-transparent
-);
-
-box-shadow:
-0 0 10px var(--starlight),
-0 0 25px var(--glow);
+.stat-card {
+  transition: all 0.35s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.mobile-menu{
-display:none;
+.stat-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  border-color: var(--starlight);
+  box-shadow:
+    0 0 15px rgba(233, 69, 96, 0.5),
+    0 0 40px rgba(233, 69, 96, 0.3);
 }
 
-.mobile-menu.active{
-display:flex;
+.glow-divider {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--starlight),
+    transparent
+  );
+
+  box-shadow:
+    0 0 10px var(--starlight),
+    0 0 25px var(--glow);
+}
+
+.mobile-menu {
+  display: none;
+}
+
+.mobile-menu.active {
+  display: flex;
 }

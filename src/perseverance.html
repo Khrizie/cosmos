@@ -15,11 +15,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
-      :root {
-        --starlight: #e94560;
-        --glow: rgba(233, 69, 96, 0.3);
-        --deep-space: #050505;
-        --card-bg: #12121a;
+      .root{
+         --dark: #0a0a0f;
+  --blue: #1a1a2e;
+  --purple: #16213e;
+  --starlight: #e94560;
+  --cyan: #0f3460;
+  --primary: #eaeaea;
+  --secondary: #a0a0a0;
+  --glow: rgba(233, 69, 96, 0.3);
       }
 
       body {
@@ -112,10 +116,17 @@
           href="index.html"
           class="flex items-center gap-2 cursor-pointer hover:scale-105 transition-transform group"
         >
-        <span class="relative flex items-center justify-center w-10 h-9 rounded-full bg-blue overflow-hidden shadow-inner transition-all">
-        <span class="absolute inset-0 bg-gradient-to-tr from-pink-500 to-transparent opacity-50"></span>
-        <span class="relative text-3xl transform -rotate-12 group-hover:rotate-0 transition-transform">🚀</span>
-      </span>
+          <span
+            class="relative flex items-center justify-center w-10 h-9 rounded-full bg-blue overflow-hidden shadow-inner transition-all"
+          >
+            <span
+              class="absolute inset-0 bg-gradient-to-tr from-pink-500 to-transparent opacity-50"
+            ></span>
+            <span
+              class="relative text-3xl transform -rotate-12 group-hover:rotate-0 transition-transform"
+              >🚀</span
+            >
+          </span>
           <span
             class="font-['Space_Grotesk'] font-bold text-xl tracking-wide text-white"
             >COSMOS</span
@@ -131,7 +142,9 @@
         <div class="hidden md:flex gap-8 text-sm font-medium">
           <a href="index.html" class="neon-link text-[#a0a0a0] pb-1">Home</a>
           <a href="missions.html" class="neon-link text-[#a0a0a0]">Missions</a>
-          <a href="spacecraft.html" class="neon-link text-[#a0a0a0]">Spacecraft</a>
+          <a href="spacecraft.html" class="neon-link text-[#a0a0a0]"
+            >Spacecraft</a
+          >
           <a href="gallery.html" class="neon-link text-[#a0a0a0]">Gallery</a>
           <a href="contact.html" class="neon-link text-[#a0a0a0]">Contact</a>
         </div>
@@ -196,9 +209,9 @@
         <h1 class="text-6xl md:text-8xl font-bold mb-6">Perseverance Rover</h1>
 
         <p class="max-w-xl text-[#a0a0a0] text-lg leading-relaxed">
-         Exploring Mars' Jezero Crater to seek signs of ancient life and collect
-samples for future return to Earth. The most sophisticated rover ever sent
-to the Red Planet.
+          Exploring Mars' Jezero Crater to seek signs of ancient life and
+          collect samples for future return to Earth. The most sophisticated
+          rover ever sent to the Red Planet.
         </p>
       </div>
     </section>
@@ -211,20 +224,24 @@ to the Red Planet.
           class="lg:col-span-2 space-y-8 text-[#a0a0a0] leading-loose text-lg mb-6"
         >
           <p>
-            The Mars 2020 Perseverance rover mission is part of NASA's Mars Exploration Program, a
-long-term effort of robotic exploration of the Red Planet. The mission addresses high-
-priority science goals for Mars exploration, including key questions about the potential for
-life on Mars.
+            The Mars 2020 Perseverance rover mission is part of NASA's Mars
+            Exploration Program, a long-term effort of robotic exploration of
+            the Red Planet. The mission addresses high- priority science goals
+            for Mars exploration, including key questions about the potential
+            for life on Mars.
           </p>
           <p>
-           Perseverance is designed to better understand the geology of Mars and seek signs of
-ancient life. The mission will collect and store a set of rock and soil samples that could be
-returned to Earth in the future. It will also test new technology to benefit future robotic and
-human exploration of Mars.
+            Perseverance is designed to better understand the geology of Mars
+            and seek signs of ancient life. The mission will collect and store a
+            set of rock and soil samples that could be returned to Earth in the
+            future. It will also test new technology to benefit future robotic
+            and human exploration of Mars.
           </p>
 
           <div class="mt-16">
-            <h2 class="text-3xl font-bold text-white mt-40">Mission Objectives</h2>
+            <h2 class="text-3xl font-bold text-white mt-40">
+              Mission Objectives
+            </h2>
             <div class="h-px w-45 bg-[#e94560]/50 mb-8"></div>
 
             <ul
@@ -247,58 +264,106 @@ human exploration of Mars.
           </div>
 
           <div class="mt-30">
-            <h2 class="text-3xl font-bold text-white mt-40">Key Achievements</h2>
+            <h2 class="text-3xl font-bold text-white mt-40">
+              Key Achievements
+            </h2>
             <div class="h-px w-45 bg-[#e94560]/50 mb-8"></div>
 
             <p class="text-[#a0a0a0] leading-loose">
-              Since landing in Jezero Crater on February 18, 2021, Perseverance has traveled over 15
-kllometers and collected 23 rock and soll samples. The rover successfully completed the
-first powered flight on another planet by deploying the Ingenulty hellcopter, which
-exceeded expectations by completing 72 flights over nearty three years.
+              Since landing in Jezero Crater on February 18, 2021, Perseverance
+              has traveled over 15 kllometers and collected 23 rock and soll
+              samples. The rover successfully completed the first powered flight
+              on another planet by deploying the Ingenulty hellcopter, which
+              exceeded expectations by completing 72 flights over nearty three
+              years.
             </p>
-            
+
             <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
-              <img src="../img/key1.jfif" alt="Mars" class="w-full h-48 object-cover rounded-xl border border-white/10 hover:border-[#e94560] transition-colors" />
-              <img src="../img/key2.jfif" alt="Planet Surface" class="w-full h-48 object-cover rounded-xl border border-white/10 hover:border-[#e94560] transition-colors" />
-              <img src="../img/key3.jfif" alt="Earth from Space" class="w-full h-48 object-cover rounded-xl border border-white/10 hover:border-[#e94560] transition-colors" />
-              <img src="../img/key4.jfif" alt="Spacecraft View" class="w-full h-48 object-cover rounded-xl border border-white/10 hover:border-[#e94560] transition-colors" />
+              <img
+                src="../img/key1.jfif"
+                alt="Mars"
+                class="w-full h-48 object-cover rounded-xl border border-white/10 hover:border-[#e94560] transition-colors"
+              />
+              <img
+                src="../img/key2.jfif"
+                alt="Planet Surface"
+                class="w-full h-48 object-cover rounded-xl border border-white/10 hover:border-[#e94560] transition-colors"
+              />
+              <img
+                src="../img/key3.jfif"
+                alt="Earth from Space"
+                class="w-full h-48 object-cover rounded-xl border border-white/10 hover:border-[#e94560] transition-colors"
+              />
+              <img
+                src="../img/key4.jfif"
+                alt="Spacecraft View"
+                class="w-full h-48 object-cover rounded-xl border border-white/10 hover:border-[#e94560] transition-colors"
+              />
             </div>
           </div>
 
           <div class="mt-30">
-            <h2 class="text-3xl font-bold text-white mt-40">Technical Specifications</h2>
+            <h2 class="text-3xl font-bold text-white mt-40">
+              Technical Specifications
+            </h2>
             <div class="h-px w-45 bg-[#e94560]/50 mb-8"></div>
 
-            <div class="bg-purple/50 border border-white/5 rounded-2xl p-8 mb-8">
-              <div class="grid grid-cols-1 md:grid-cols-2 py-4 border-b border-white/5">
+            <div
+              class="bg-purple/50 border border-white/5 rounded-2xl p-8 mb-8"
+            >
+              <div
+                class="grid grid-cols-1 md:grid-cols-2 py-4 border-b border-white/5"
+              >
                 <span class="text-[#a0a0a0]">Launch Vehicle</span>
                 <span class="text-white font-bold">Atlas V 541</span>
               </div>
-              <div class="grid grid-cols-1 md:grid-cols-2 py-4 border-b border-white/5">
+              <div
+                class="grid grid-cols-1 md:grid-cols-2 py-4 border-b border-white/5"
+              >
                 <span class="text-[#a0a0a0]">Launch Site</span>
-                <span class="text-white font-bold">Cape Canaveral Air Force Station, Florida</span>
+                <span class="text-white font-bold"
+                  >Cape Canaveral Air Force Station, Florida</span
+                >
               </div>
-              <div class="grid grid-cols-1 md:grid-cols-2 py-4 border-b border-white/5">
+              <div
+                class="grid grid-cols-1 md:grid-cols-2 py-4 border-b border-white/5"
+              >
                 <span class="text-[#a0a0a0]">Landing Site</span>
                 <span class="text-white font-bold">Jezero Crater, Mars</span>
               </div>
-              <div class="grid grid-cols-1 md:grid-cols-2 py-4 border-b border-white/5">
+              <div
+                class="grid grid-cols-1 md:grid-cols-2 py-4 border-b border-white/5"
+              >
                 <span class="text-[#a0a0a0]">Mission Duration</span>
-                <span class="text-white font-bold">At least 1 Mars year (about 687 Earth days)</span>
+                <span class="text-white font-bold"
+                  >At least 1 Mars year (about 687 Earth days)</span
+                >
               </div>
-              <div class="grid grid-cols-1 md:grid-cols-2 py-4 border-b border-white/5">
+              <div
+                class="grid grid-cols-1 md:grid-cols-2 py-4 border-b border-white/5"
+              >
                 <span class="text-[#a0a0a0]">Mass</span>
                 <span class="text-white font-bold">1,025 kg (2,260 lbs)</span>
               </div>
               <div class="grid grid-cols-1 md:grid-cols-2 py-4">
                 <span class="text-[#a0a0a0]">Power Source</span>
-                <span class="text-white font-bold">Multi-Mission Radioisotope Thermoelectric Generator (MMRTG)</span>
+                <span class="text-white font-bold"
+                  >Multi-Mission Radioisotope Thermoelectric Generator
+                  (MMRTG)</span
+                >
               </div>
             </div>
 
             <div class="border-l-4 border-[#e94560] pl-6 py-2">
-              <p class="text-xl text-secondary italic mb-4">"This landing is one of those pivotal moments for NASA, the United States, and space exploration globally – when we know we are on the cusp of discovery and sharpening our pencils, so to speak, to rewrite the textbooks."</p>
-              <p class="text-secondary italic">— Steve Jurczyk, former NASA Acting Administrator</p>
+              <p class="text-xl text-secondary italic mb-4">
+                "This landing is one of those pivotal moments for NASA, the
+                United States, and space exploration globally – when we know we
+                are on the cusp of discovery and sharpening our pencils, so to
+                speak, to rewrite the textbooks."
+              </p>
+              <p class="text-secondary italic">
+                — Steve Jurczyk, former NASA Acting Administrator
+              </p>
             </div>
           </div>
 
@@ -307,25 +372,46 @@ exceeded expectations by completing 72 flights over nearty three years.
             <div class="h-px w-45 bg-[#e94560]/50 mb-8"></div>
 
             <p class="text-[#a0a0a0] leading-loose mb-10">
-              As of March 2024, Perseverance continues its exploration of Jezero Crater, having completed its primary mission and now in extended operations. The rover is currently climbing the crater rim, analyzing rock formations that predate the crater itself, providing insights into Mars' early history.
+              As of March 2024, Perseverance continues its exploration of Jezero
+              Crater, having completed its primary mission and now in extended
+              operations. The rover is currently climbing the crater rim,
+              analyzing rock formations that predate the crater itself,
+              providing insights into Mars' early history.
             </p>
 
             <div class="flex flex-wrap gap-3 mt-8">
-              <span class="px-5 py-2 rounded-full border border-white/10 bg-blue/50 text-sm text-[#a0a0a0] hover:text-white hover:border-white/30 transition-colors cursor-pointer">Mars</span>
-              <span class="px-5 py-2 rounded-full border border-white/10 bg-blue/50 text-sm text-[#a0a0a0] hover:text-white hover:border-white/30 transition-colors cursor-pointer">Rover</span>
-              <span class="px-5 py-2 rounded-full border border-white/10 bg-blue/50 text-sm text-[#a0a0a0] hover:text-white hover:border-white/30 transition-colors cursor-pointer">NASA</span>
-              <span class="px-5 py-2 rounded-full border border-white/10 bg-blue/50 text-sm text-[#a0a0a0] hover:text-white hover:border-white/30 transition-colors cursor-pointer">Astrobiology</span>
-              <span class="px-5 py-2 rounded-full border border-white/10 bg-blue/50 text-sm text-[#a0a0a0] hover:text-white hover:border-white/30 transition-colors cursor-pointer">Sample Return</span>
-              <span class="px-5 py-2 rounded-full border border-white/10 bg-blue/50 text-sm text-[#a0a0a0] hover:text-white hover:border-white/30 transition-colors cursor-pointer">Ingenuity</span>
+              <span
+                class="px-5 py-2 rounded-full border border-white/10 bg-blue/50 text-sm text-[#a0a0a0] hover:text-white hover:border-white/30 transition-colors cursor-pointer"
+                >Mars</span
+              >
+              <span
+                class="px-5 py-2 rounded-full border border-white/10 bg-blue/50 text-sm text-[#a0a0a0] hover:text-white hover:border-white/30 transition-colors cursor-pointer"
+                >Rover</span
+              >
+              <span
+                class="px-5 py-2 rounded-full border border-white/10 bg-blue/50 text-sm text-[#a0a0a0] hover:text-white hover:border-white/30 transition-colors cursor-pointer"
+                >NASA</span
+              >
+              <span
+                class="px-5 py-2 rounded-full border border-white/10 bg-blue/50 text-sm text-[#a0a0a0] hover:text-white hover:border-white/30 transition-colors cursor-pointer"
+                >Astrobiology</span
+              >
+              <span
+                class="px-5 py-2 rounded-full border border-white/10 bg-blue/50 text-sm text-[#a0a0a0] hover:text-white hover:border-white/30 transition-colors cursor-pointer"
+                >Sample Return</span
+              >
+              <span
+                class="px-5 py-2 rounded-full border border-white/10 bg-blue/50 text-sm text-[#a0a0a0] hover:text-white hover:border-white/30 transition-colors cursor-pointer"
+                >Ingenuity</span
+              >
             </div>
           </div>
-
         </div>
 
         <div class="lg:col-span-1">
           <div class="sticky top-24 space-y-6">
             <div
-              class=" rounded-2xl p-8 border border-white/5 shadow-2xl bg-blue"
+              class="rounded-2xl p-8 border border-white/5 shadow-2xl bg-blue"
             >
               <div class="flex items-center gap-3 mb-10">
                 <span class="text-2xl">📊</span>
@@ -377,7 +463,9 @@ exceeded expectations by completing 72 flights over nearty three years.
                       class="text-s text-[#a0a0a0] tracking-widest font-semibold"
                       >Temperature</span
                     >
-                    <span class="temp-glow text-md font-bold text-white">-63°C</span>
+                    <span class="temp-glow text-md font-bold text-white"
+                      >-63°C</span
+                    >
                   </div>
                   <div class="h-px w-full bg-white/10"></div>
                 </div>
@@ -403,7 +491,7 @@ exceeded expectations by completing 72 flights over nearty three years.
             </div>
 
             <div
-              class=" rounded-2xl p-8 border border-white/5 shadow-2xl bg-blue"
+              class="rounded-2xl p-8 border border-white/5 shadow-2xl bg-blue"
             >
               <div class="flex items-center gap-3 mb-8">
                 <span class="text-xl opacity-80">🔗</span>
@@ -446,25 +534,34 @@ exceeded expectations by completing 72 flights over nearty three years.
             </div>
 
             <div
-              class=" rounded-2xl p-6 border border-white/5 shadow-2xl bg-blue">
+              class="rounded-2xl p-6 border border-white/5 shadow-2xl bg-blue"
+            >
               <div class="flex items-center gap-3 mb-6">
                 <span class="text-xl opacity-80">📤</span>
                 <h3 class="text-lg font-bold text-white tracking-wide">
                   Share Mission
                 </h3>
               </div>
-              
+
               <div class="flex gap-3">
-                <button class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#e94560] transition border border-white/10 text-gray-400 hover:text-white">
+                <button
+                  class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#e94560] transition border border-white/10 text-gray-400 hover:text-white"
+                >
                   <span class="text-sm font-bold">𝕏</span>
                 </button>
-                <button class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#e94560] transition border border-white/10 text-gray-400 hover:text-white">
+                <button
+                  class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#e94560] transition border border-white/10 text-gray-400 hover:text-white"
+                >
                   <span class="text-sm font-bold">f</span>
                 </button>
-                <button class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#e94560] transition border border-white/10 text-gray-400 hover:text-white">
+                <button
+                  class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#e94560] transition border border-white/10 text-gray-400 hover:text-white"
+                >
                   <span class="text-sm font-bold">in</span>
                 </button>
-                <button class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#e94560] transition border border-white/10 text-gray-400 hover:text-white">
+                <button
+                  class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#e94560] transition border border-white/10 text-gray-400 hover:text-white"
+                >
                   <span class="text-sm">✉</span>
                 </button>
               </div>
@@ -473,42 +570,72 @@ exceeded expectations by completing 72 flights over nearty three years.
         </div>
       </div>
     </section>
-<!--pics-->
+    <!--pics-->
     <section class="py-20 bg-cyan">
       <div class="max-w-7xl mx-auto px-6 md:px-12 text-center relative">
         <h2 class="text-3xl font-bold text-white mb-2">Related Missions</h2>
-        <p class="text-[#a0a0a0] mb-12">Explore other active missions in our solar system</p>
+        <p class="text-[#a0a0a0] mb-12">
+          Explore other active missions in our solar system
+        </p>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-          
-          <div class="bg-blue border border-white/5 rounded-2xl overflow-hidden hover:-translate-y-2 transition-transform duration-300 shadow-lg">
-            <img src="../img/related1_2.jfif" alt="International Space Station" class="w-full h-48 object-cover" />
+          <div
+            class="bg-blue border border-white/5 rounded-2xl overflow-hidden hover:-translate-y-2 transition-transform duration-300 shadow-lg"
+          >
+            <img
+              src="../img/related1_2.jfif"
+              alt="International Space Station"
+              class="w-full h-48 object-cover"
+            />
             <div class="p-6">
-              <h3 class="text-xl font-bold text-white mb-2">International Space Station</h3>
-              <p class="text-[#a0a0a0] text-sm leading-relaxed">Continuous human presence in low Earth orbit for over 23 years.</p>
+              <h3 class="text-xl font-bold text-white mb-2">
+                International Space Station
+              </h3>
+              <p class="text-[#a0a0a0] text-sm leading-relaxed">
+                Continuous human presence in low Earth orbit for over 23 years.
+              </p>
             </div>
           </div>
 
-          <div class="bg-blue border border-white/5 rounded-2xl overflow-hidden hover:-translate-y-2 transition-transform duration-300 shadow-lg">
-            <img src="../img/related2.jfif" alt="James Webb Telescope" class="w-full h-48 object-cover" onerror="this.src='../img/moon1.jpg'" />
+          <div
+            class="bg-blue border border-white/5 rounded-2xl overflow-hidden hover:-translate-y-2 transition-transform duration-300 shadow-lg"
+          >
+            <img
+              src="../img/related2.jfif"
+              alt="James Webb Telescope"
+              class="w-full h-48 object-cover"
+              onerror="this.src = '../img/moon1.jpg'"
+            />
             <div class="p-6">
-              <h3 class="text-xl font-bold text-white mb-2">James Webb Telescope</h3>
-              <p class="text-[#a0a0a0] text-sm leading-relaxed">Observing the universe in infrared to see the first galaxies.</p>
+              <h3 class="text-xl font-bold text-white mb-2">
+                James Webb Telescope
+              </h3>
+              <p class="text-[#a0a0a0] text-sm leading-relaxed">
+                Observing the universe in infrared to see the first galaxies.
+              </p>
             </div>
           </div>
 
-          <div class="bg-blue border border-white/5 rounded-2xl overflow-hidden hover:-translate-y-2 transition-transform duration-300 shadow-lg">
-            <img src="../img/related1_2.jfif" alt="Artemis Program" class="w-full h-48 object-cover" />
+          <div
+            class="bg-blue border border-white/5 rounded-2xl overflow-hidden hover:-translate-y-2 transition-transform duration-300 shadow-lg"
+          >
+            <img
+              src="../img/related1_2.jfif"
+              alt="Artemis Program"
+              class="w-full h-48 object-cover"
+            />
             <div class="p-6">
               <h3 class="text-xl font-bold text-white mb-2">Artemis Program</h3>
-              <p class="text-[#a0a0a0] text-sm leading-relaxed">Returning humans to the Moon and establishing sustainable presence.</p>
+              <p class="text-[#a0a0a0] text-sm leading-relaxed">
+                Returning humans to the Moon and establishing sustainable
+                presence.
+              </p>
             </div>
           </div>
-          
         </div>
       </div>
     </section>
-<!--footer-->
+    <!--footer-->
     <footer class="w-full mt-auto bg-dark pt-12 pb-8 px-6 md:px-8">
       <div class="max-w-6xl mx-auto">
         <div
@@ -530,23 +657,33 @@ exceeded expectations by completing 72 flights over nearty three years.
           <nav
             class="footer-nav flex flex-wrap justify-center gap-6 text-sm text-gray-400"
           >
-            <a href="./index.html" class="hover:text-[#e94560] transition">Home</a>
+            <a href="./index.html" class="hover:text-[#e94560] transition"
+              >Home</a
+            >
             <a href="./missions.html" class="hover:text-[#e94560] transition"
               >Missions</a
             >
-            <a href="./spacecraft.html" class="hover:text-[#e94560] transition">Spacecraft</a>
-            <a href="./gallery.html" class="hover:text-[#e94560] transition">Gallery</a>
+            <a href="./spacecraft.html" class="hover:text-[#e94560] transition"
+              >Spacecraft</a
+            >
+            <a href="./gallery.html" class="hover:text-[#e94560] transition"
+              >Gallery</a
+            >
           </nav>
           <div class="footer-social flex gap-4">
             <div
               class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#e94560] cursor-pointer transition border border-white/10"
             >
-              <span class="text-xs font-bold text-gray-400 hover:text-white">𝕏</span>
+              <span class="text-xs font-bold text-gray-400 hover:text-white"
+                >𝕏</span
+              >
             </div>
             <div
               class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#e94560] cursor-pointer transition border border-white/10"
             >
-              <span class="text-xs font-bold text-gray-400 hover:text-white">in</span>
+              <span class="text-xs font-bold text-gray-400 hover:text-white"
+                >in</span
+              >
             </div>
             <div
               class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#e94560] cursor-pointer transition border border-white/10"
@@ -567,7 +704,7 @@ exceeded expectations by completing 72 flights over nearty three years.
         </div>
       </div>
     </footer>
-<!--script-->
+    <!--script-->
     <script src="js/script.js"></script>
     <script>
       const menuBtn = document.getElementById("menuBtn");
