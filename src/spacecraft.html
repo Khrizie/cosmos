@@ -14,6 +14,17 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
+      :root {
+        --dark: #0a0a0f;
+        --blue: #1a1a2e;
+        --purple: #16213e;
+        --starlight: #e94560;
+        --cyan: #0f3460;
+        --primary: #eaeaea;
+        --secondary: #a0a0a0;
+        --glow: rgba(233, 69, 96, 0.3);
+      }
+      
       @keyframes fadeInUp {
         0% {
           opacity: 0;
@@ -25,389 +36,261 @@
         }
       }
 
-      @keyframes moveStars {
-        from {
-          transform: translateY(0);
-        }
-        to {
-          transform: translateY(-100px);
-        }
+      .stars-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 150%;
+        height: 150%;
+        z-index: 0;
+        pointer-events: none;
+        background-image:
+          radial-gradient(1px 1px at 10% 10%, #fff, transparent),
+          radial-gradient(1px 1px at 20% 50%, #fff, transparent),
+          radial-gradient(2px 2px at 40% 80%, #fff, transparent),
+          radial-gradient(1.5px 1.5px at 60% 20%, #fff, transparent),
+          radial-gradient(1px 1px at 80% 40%, #fff, transparent),
+          radial-gradient(2px 2px at 30% 90%, #fff, transparent),
+          radial-gradient(1px 1px at 70% 70%, #fff, transparent),
+          radial-gradient(1.5px 1.5px at 90% 10%, #fff, transparent);
+        background-size: 300px 300px;
+        opacity: 1.3;
+        animation: moveStars 40s linear infinite;
       }
 
-      .stars-bg {
-        animation: moveStars 20s linear infinite;
-        background-image:
-          radial-gradient(1px 1px at 15% 20%, #ffffff, transparent),
-          radial-gradient(1px 1px at 30% 65%, #ffffff, transparent),
-          radial-gradient(2px 2px at 50% 35%, #ffffff, transparent),
-          radial-gradient(1px 1px at 65% 80%, #ffffff, transparent),
-          radial-gradient(1px 1px at 85% 15%, #ffffff, transparent),
-          radial-gradient(2px 2px at 90% 60%, #ffffff, transparent),
-          radial-gradient(1px 1px at 10% 85%, #ffffff, transparent);
-        background-size: 250px 250px;
-        opacity: 0.3;
+      @keyframes moveStars {
+        from { transform: translate(0, 0); }
+        to { transform: translate(-300px, -300px); }
       }
 
       .animate-fade-in-up {
-        opacity: 0;
         animation: fadeInUp 0.8s ease-out forwards;
       }
 
-      .delay-100 {
-        animation-delay: 100ms;
+      .neon-btn {
+        transition: 0.3s;
+        text-align: center;
+        background: var(--starlight);
       }
-      .delay-200 {
-        animation-delay: 200ms;
-      }
-      .delay-300 {
-        animation-delay: 300ms;
+
+      .neon-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 0 20px var(--starlight), 0 0 40px var(--glow);
       }
     </style>
   </head>
 
-  <body>
-    
-   <section class="text-[#eaeaea] font-['Inter'] bg-[#050505] min-h-screen relative overflow-x-hidden flex flex-col">
-  <!--header-->  
-  <header>
-<div class="relative z-10 w-full flex flex-col flex-grow">
-  <nav class="flex justify-between items-center px-6 md:px-8 py-8 max-w-7xl mx-auto w-full">
-    <a href="index.html" class="flex items-center gap-2 cursor-pointer hover:scale-105 transition-transform group">
-      <span class="relative flex items-center justify-center w-10 h-9 rounded-full bg-blue overflow-hidden shadow-inner transition-all">
-        <span class="absolute inset-0 bg-gradient-to-tr from-pink-500 to-transparent opacity-50"></span>
-        <span class="relative text-3xl transform -rotate-12 group-hover:rotate-0 transition-transform">🚀</span>
-      </span>
-      <span class="font-['Space_Grotesk'] font-bold text-xl tracking-wide text-white">COSMOS</span>
-    </a>
-
-    <div id="menuBtn" class="md:hidden text-white hover:text-[#e94560] cursor-pointer transition-colors z-110">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-7 h-7">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-      </svg>
+  <body class="bg-[#16213e] text-[#eaeaea] font-['Inter'] relative overflow-x-hidden">
+    <div class="stars-bg"></div>
+    <div class="fixed inset-0 z-[1] pointer-events-none" 
+         style="background: radial-gradient(circle at center, transparent 0%, rgba(10, 10, 15, 0) 20%, rgba(10, 10, 15, 0.3) 50%, rgba(10, 10, 15, 0.7) 80%, rgba(10, 10, 15, 0.95) 100%);">
     </div>
 
-    <div class="hidden md:flex gap-8 text-sm font-medium">
-      <a href="index.html" class="text-[#a0a0a0] hover:text-[#eaeaea] transition-colors pb-1">Home</a>
-      <a href="missions.html" class="text-#a0a0a0] hover:text-[#eaeaea] pb-1">Missions</a>
-      <a href="spacecraft.html" class="text-[#eaeaea] border-b-2 border-[#e94560] transition-colors pb-1">Spacecraft</a>
-      <a href="gallery.html" class="text-[#a0a0a0] hover:text-[#eaeaea] transition-colors pb-1">Gallery</a>
-      <a href="contact.html" class="text-[#a0a0a0] hover:text-[#eaeaea] transition-colors pb-1">Contact</a>
-    </div>
-  </nav>
-</div>
+    <div class="relative z-10 min-h-screen flex flex-col">
+      <header>
+        <nav class="flex justify-between items-center px-6 md:px-8 py-8 max-w-7xl mx-auto w-full">
+          <a href="index.html" class="flex items-center gap-2 cursor-pointer hover:scale-105 transition-transform group">
+            <span class="relative flex items-center justify-center w-10 h-9 rounded-full bg-[#1a1a2e] overflow-hidden shadow-inner transition-all">
+              <span class="absolute inset-0 bg-gradient-to-tr from-pink-500 to-transparent opacity-50"></span>
+              <span class="relative text-3xl transform -rotate-12 group-hover:rotate-0 transition-transform">🚀</span>
+            </span>
+            <span class="font-['Space_Grotesk'] font-bold text-xl tracking-wide text-white">COSMOS</span>
+          </a>
 
-<div id="mobileMenu" 
-     class="fixed top-20 right-6 w-64 bg-dark/95 border border-white/10 backdrop-blur-xl z-[100] 
-            flex flex-col rounded-2xl p-6 gap-6 text-lg font-bold text-white shadow-2xl
-            invisible opacity-0 -translate-y-4 transition-all duration-300 ease-out">
-  <a href="index.html" class="hover:text-[#e94560] transition-colors border-b border-white/5 pb-2">Home</a>
-  <a href="missions.html" class=" border-b border-white/5 pb-2">Missions</a>
-  <a href="spacecraft.html" class="hover:text-[#e94560] transition-colors border-b text-[#e94560] border-white/5 pb-2">Spacecraft</a>
-  <a href="gallery.html" class="hover:text-[#e94560] transition-colors border-b border-white/5 pb-2">Gallery</a>
-  <a href="contact.html" class="hover:text-[#e94560] transition-colors">Contact</a>
-</div>
-</header>
-
-<!--banner-->
-    <section
-      class="relative z-10 w-full pt-12 pb-20 flex flex-col items-center text-center px-6 mt-6 animate-fade-in-up"
-    >
-      <h1
-        class="font-['Space_Grotesk'] text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight"
-      >
-        Our Fleet
-      </h1>
-      <p class="text-[#a0a0a0] text-lg max-w-2xl leading-relaxed">
-        Advanced spacecraft designed for exploration, research, and pushing the
-        boundaries of human presence in space.
-      </p>
-    </section>
-<!--banner description-->
-    <main
-      class="relative z-10 max-w-7xl mx-auto px-6 md:px-8 py-12 w-full flex flex-col gap-32 mb-20"
-    >
-      <section
-        class="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-20 animate-fade-in-up delay-100"
-      >
-        <div class="w-full md:w-1/2 flex justify-center order-2 md:order-1">
-          <div
-            class="w-64 h-64 md:w-80 md:h-80 bg-[#cdd5e0] rounded-3xl flex items-center justify-center shadow-[0_0_80px_rgba(205,213,224,0.15)] transition-transform hover:scale-105 duration-500"
-          >
-            <div
-              class="w-32 h-32 md:w-40 md:h-40 bg-[#313a4b] rounded-2xl shadow-inner"
-            ></div>
+          <div id="menuBtn" class="md:hidden text-white hover:text-[#e94560] cursor-pointer transition-colors z-110">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-7 h-7">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
           </div>
-        </div>
 
+          <div class="hidden md:flex gap-8 text-sm font-medium">
+            <a href="index.html" class="text-[#a0a0a0] hover:text-[#eaeaea] transition-colors pb-1">Home</a>
+            <a href="missions.html" class="text-[#a0a0a0] hover:text-[#eaeaea] transition-colors pb-1">Missions</a>
+            <a href="spacecraft.html" class="text-[#eaeaea] border-b-2 border-[#e94560] transition-colors pb-1">Spacecraft</a>
+            <a href="gallery.html" class="text-[#a0a0a0] hover:text-[#eaeaea] transition-colors pb-1">Gallery</a>
+            <a href="contact.html" class="text-[#a0a0a0] hover:text-[#eaeaea] transition-colors pb-1">Contact</a>
+          </div>
+        </nav>
+
+        <div id="mobileMenu" class="fixed top-20 right-6 w-64 bg-[#0a0a0f]/95 border border-white/10 backdrop-blur-xl z-[100] flex flex-col rounded-2xl p-6 gap-6 text-lg font-bold text-white shadow-2xl invisible opacity-0 -translate-y-4 transition-all duration-300 ease-out">
+          <a href="index.html" class="hover:text-[#e94560] transition-colors border-b border-white/5 pb-2">Home</a>
+          <a href="missions.html" class="border-b border-white/5 pb-2">Missions</a>
+          <a href="spacecraft.html" class="text-[#e94560] border-b border-white/5 pb-2">Spacecraft</a>
+          <a href="gallery.html" class="hover:text-[#e94560] border-b border-white/5 pb-2">Gallery</a>
+          <a href="contact.html" class="hover:text-[#e94560]">Contact</a>
+        </div>
+      </header>
+
+      <section class="relative w-full pt-12 pb-20 flex flex-col items-center text-center px-6 animate-fade-in-up">
+        <h1 class="font-['Space_Grotesk'] text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight">Our Fleet</h1>
+        <p class="text-[#a0a0a0] text-lg max-w-2xl leading-relaxed">
+          Advanced spacecraft designed for exploration, research, and pushing the boundaries of human presence in space.
+        </p>
+      </section>
+
+      <main class="max-w-7xl mx-auto px-6 md:px-8 py-12 w-full flex flex-col gap-32 mb-20">
+        <section class="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-20 animate-fade-in-up" style="animation-delay: 0.1s;">
+          <div class="w-full md:w-1/2 flex justify-center order-2 md:order-1">
+            <div class="w-64 h-64 md:w-80 md:h-80 bg-[#cdd5e0] rounded-3xl flex items-center justify-center shadow-[0_0_80px_rgba(205,213,224,0.15)] transition-transform hover:scale-105 duration-500">
+              <div class="w-32 h-32 md:w-40 md:h-40 bg-[#313a4b] rounded-2xl shadow-inner"></div>
+            </div>
+          </div>
+          <div class="w-full md:w-1/2 order-1 md:order-2 flex flex-col items-start">
+            <h2 class="font-['Space_Grotesk'] text-3xl md:text-4xl font-bold text-white mb-4">Orion Capsule</h2>
+            <p class="text-[#8e93a4] leading-relaxed mb-8">NASA's state-of-the-art crew vehicle designed for deep space exploration.</p>
+            <div class="grid grid-cols-2 gap-4 w-full mb-8">
+              <div class="bg-white/5 rounded-xl p-5 border border-white/5">
+                <div class="text-[#8e93a4] text-[10px] uppercase tracking-widest font-bold mb-1">Crew Capacity</div>
+                <div class="text-[#e94560] font-medium">4 Astronauts</div>
+              </div>
+              <div class="bg-white/5 rounded-xl p-5 border border-white/5">
+                <div class="text-[#8e93a4] text-[10px] uppercase tracking-widest font-bold mb-1">Mission Duration</div>
+                <div class="text-[#e94560] font-medium">21 Days</div>
+              </div>
+            </div>
+            <a href="#" class="neon-btn text-white px-8 py-3 rounded-full font-medium w-full md:w-auto">View Specification</a>
+          </div>
+        </section>
+
+        <section class="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-20 animate-fade-in-up" style="animation-delay: 0.2s;">
+          <div class="w-full md:w-1/2 flex flex-col items-start">
+            <h2 class="font-['Space_Grotesk'] text-3xl md:text-4xl font-bold text-white mb-4">Dragon 2</h2>
+            <p class="text-[#8e93a4] leading-relaxed mb-8">SpaceX's reusable crew spacecraft revolutionizing access to low Earth orbit.</p>
+            <div class="grid grid-cols-2 gap-4 w-full mb-8">
+              <div class="bg-white/5 rounded-xl p-5 border border-white/5">
+                <div class="text-[#8e93a4] text-[10px] uppercase tracking-widest font-bold mb-1">Reusability</div>
+                <div class="text-[#e94560] font-medium">10+ Flights</div>
+              </div>
+              <div class="bg-white/5 rounded-xl p-5 border border-white/5">
+                <div class="text-[#8e93a4] text-[10px] uppercase tracking-widest font-bold mb-1">Height</div>
+                <div class="text-[#e94560] font-medium">8.1 m</div>
+              </div>
+            </div>
+            <a href="#" class="neon-btn text-white px-8 py-3 rounded-full font-medium w-full md:w-auto">View Specification</a>
+          </div>
+          <div class="w-full md:w-1/2 flex justify-center">
+            <div class="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-[#ffb703] to-[#fb8500] rounded-3xl flex items-center justify-center shadow-[0_0_80px_rgba(251,133,0,0.15)] transition-transform hover:scale-105 duration-500">
+              <div class="w-24 h-24 md:w-28 md:h-28 bg-[#ffc533] rounded-full shadow-inner"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-20 animate-fade-in-up" style="animation-delay: 0.3s;">
+          <div class="w-full md:w-1/2 flex justify-center order-2 md:order-1">
+            <div class="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-[#4ea8de] to-[#2176ff] rounded-3xl flex items-center justify-center shadow-[0_0_80px_rgba(33,118,255,0.15)] transition-transform hover:scale-105 duration-500">
+              <div class="w-32 h-10 md:w-40 md:h-12 bg-[#8bc4fa] rounded-lg shadow-inner"></div>
+            </div>
+          </div>
+          <div class="w-full md:w-1/2 order-1 md:order-2 flex flex-col items-start">
+            <h2 class="font-['Space_Grotesk'] text-3xl md:text-4xl font-bold text-white mb-4">Starship</h2>
+            <p class="text-[#8e93a4] leading-relaxed mb-8">Fully reusable super-heavy launch vehicle designed for Mars colonization.</p>
+            <div class="grid grid-cols-2 gap-4 w-full mb-8">
+              <div class="bg-white/5 rounded-xl p-5 border border-white/5">
+                <div class="text-[#8e93a4] text-[10px] uppercase tracking-widest font-bold mb-1">Height</div>
+                <div class="text-[#e94560] font-medium">121 m</div>
+              </div>
+              <div class="bg-white/5 rounded-xl p-5 border border-white/5">
+                <div class="text-[#8e93a4] text-[10px] uppercase tracking-widest font-bold mb-1">Payload to LEO</div>
+                <div class="text-[#e94560] font-medium">150 t</div>
+              </div>
+            </div>
+            <a href="#" class="neon-btn text-white px-8 py-3 rounded-full font-medium w-full md:w-auto">View Specification</a>
+          </div>
+        </section>
+      </main>
+
+       <!--footer-->
+    <footer class="w-full mt-auto bg-[#0a0a0f] pt-12 pb-8 px-6 md:px-8 border-t border-white/10">
+      <div class="max-w-6xl mx-auto">
         <div
-          class="w-full md:w-1/2 order-1 md:order-2 flex flex-col items-start text-left"
+          class="flex flex-col md:flex-row justify-between items-center gap-8 mb-10"
         >
-          <h2
-            class="font-['Space_Grotesk'] text-3xl md:text-4xl font-bold text-white mb-4"
-          >
-            Orion Capsule
-          </h2>
-          <p class="text-[#8e93a4] leading-relaxed mb-8">
-            NASA's state-of-the-art crew vehicle designed for deep space
-            exploration. Capable of sustaining astronauts for months during
-            missions to the Moon, Mars, and beyond.
-          </p>
-
-          <div class="grid grid-cols-2 gap-4 w-full mb-8">
-            <div class="bg-[#141622] rounded-xl p-5 border border-white/5">
-              <div
-                class="text-[#8e93a4] text-[10px] uppercase tracking-widest font-bold mb-1"
-              >
-                Crew Capacity
-              </div>
-              <div class="text-[#e94560] font-medium">4 Astronauts</div>
-            </div>
-            <div class="bg-[#141622] rounded-xl p-5 border border-white/5">
-              <div
-                class="text-[#8e93a4] text-[10px] uppercase tracking-widest font-bold mb-1"
-              >
-                Mission Duration
-              </div>
-              <div class="text-[#e94560] font-medium">21 Days</div>
-            </div>
-            <div class="bg-[#141622] rounded-xl p-5 border border-white/5">
-              <div
-                class="text-[#8e93a4] text-[10px] uppercase tracking-widest font-bold mb-1"
-              >
-                Height
-              </div>
-              <div class="text-[#e94560] font-medium">3.3 m</div>
-            </div>
-            <div class="bg-[#141622] rounded-xl p-5 border border-white/5">
-              <div
-                class="text-[#8e93a4] text-[10px] uppercase tracking-widest font-bold mb-1"
-              >
-                Diameter
-              </div>
-              <div class="text-[#e94560] font-medium">5 m</div>
-            </div>
-          </div>
-
           <a
-            href="#"
-            class="bg-[#e94560] text-white px-8 py-3.5 rounded-full text-sm font-medium hover:bg-[#ff4f6d] shadow-[0_0_25px_rgba(233,69,96,0.4)] transition-all inline-block"
+            href="index.html"
+            class="flex items-center gap-2 cursor-pointer hover:scale-105 transition-transform"
           >
-            View Specifications
-          </a>
-        </div>
-      </section>
-
-      <section
-        class="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-20 animate-fade-in-up delay-200"
-      >
-        <div class="w-full md:w-1/2 flex flex-col items-start text-left">
-          <h2
-            class="font-['Space_Grotesk'] text-3xl md:text-4xl font-bold text-white mb-4"
-          >
-            Dragon 2
-          </h2>
-          <p class="text-[#8e93a4] leading-relaxed mb-8">
-            SpaceX's reusable crew spacecraft revolutionizing access to low
-            Earth orbit. First commercial vehicle to carry humans to the ISS.
-          </p>
-
-          <div class="grid grid-cols-2 gap-4 w-full mb-8">
-            <div class="bg-[#141622] rounded-xl p-5 border border-white/5">
-              <div
-                class="text-[#8e93a4] text-[10px] uppercase tracking-widest font-bold mb-1"
-              >
-                Crew Capacity
-              </div>
-              <div class="text-[#e94560] font-medium">7 Astronauts</div>
-            </div>
-            <div class="bg-[#141622] rounded-xl p-5 border border-white/5">
-              <div
-                class="text-[#8e93a4] text-[10px] uppercase tracking-widest font-bold mb-1"
-              >
-                Reusability
-              </div>
-              <div class="text-[#e94560] font-medium">10+ Flights</div>
-            </div>
-            <div class="bg-[#141622] rounded-xl p-5 border border-white/5">
-              <div
-                class="text-[#8e93a4] text-[10px] uppercase tracking-widest font-bold mb-1"
-              >
-                Height
-              </div>
-              <div class="text-[#e94560] font-medium">8.1 m</div>
-            </div>
-            <div class="bg-[#141622] rounded-xl p-5 border border-white/5">
-              <div
-                class="text-[#8e93a4] text-[10px] uppercase tracking-widest font-bold mb-1"
-              >
-                Diameter
-              </div>
-              <div class="text-[#e94560] font-medium">4 m</div>
-            </div>
-          </div>
-
-          <a
-            href="#"
-            class="bg-[#e94560] text-white px-8 py-3.5 rounded-full text-sm font-medium hover:bg-[#ff4f6d] shadow-[0_0_25px_rgba(233,69,96,0.4)] transition-all inline-block"
-          >
-            View Specifications
-          </a>
-        </div>
-
-        <div class="w-full md:w-1/2 flex justify-center">
-          <div
-            class="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-[#ffb703] to-[#fb8500] rounded-3xl flex items-center justify-center shadow-[0_0_80px_rgba(251,133,0,0.15)] transition-transform hover:scale-105 duration-500"
-          >
-            <div
-              class="w-24 h-24 md:w-28 md:h-28 bg-[#ffc533] rounded-full shadow-inner"
-            ></div>
-          </div>
-        </div>
-      </section>
-
-      <section
-        class="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-20 animate-fade-in-up delay-300"
-      >
-        <div class="w-full md:w-1/2 flex justify-center order-2 md:order-1">
-          <div
-            class="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-[#4ea8de] to-[#2176ff] rounded-3xl flex items-center justify-center shadow-[0_0_80px_rgba(33,118,255,0.15)] transition-transform hover:scale-105 duration-500"
-          >
-            <div
-              class="w-32 h-10 md:w-40 md:h-12 bg-[#8bc4fa] rounded-lg shadow-inner"
-            ></div>
-          </div>
-        </div>
-
-        <div
-          class="w-full md:w-1/2 order-1 md:order-2 flex flex-col items-start text-left"
-        >
-          <h2
-            class="font-['Space_Grotesk'] text-3xl md:text-4xl font-bold text-white mb-4"
-          >
-            Starship
-          </h2>
-          <p class="text-[#8e93a4] leading-relaxed mb-8">
-            Fully reusable super-heavy launch vehicle designed for Mars
-            colonization. The largest rocket ever built with unprecedented
-            payload capacity.
-          </p>
-
-          <div class="grid grid-cols-2 gap-4 w-full mb-8">
-            <div class="bg-[#141622] rounded-xl p-5 border border-white/5">
-              <div
-                class="text-[#8e93a4] text-[10px] uppercase tracking-widest font-bold mb-1"
-              >
-                Payload to LEO
-              </div>
-              <div class="text-[#e94560] font-medium">100-150 t</div>
-            </div>
-            <div class="bg-[#141622] rounded-xl p-5 border border-white/5">
-              <div
-                class="text-[#8e93a4] text-[10px] uppercase tracking-widest font-bold mb-1"
-              >
-                Height
-              </div>
-              <div class="text-[#e94560] font-medium">121 m</div>
-            </div>
-            <div class="bg-[#141622] rounded-xl p-5 border border-white/5">
-              <div
-                class="text-[#8e93a4] text-[10px] uppercase tracking-widest font-bold mb-1"
-              >
-                Thrust
-              </div>
-              <div class="text-[#e94560] font-medium">7,590 t</div>
-            </div>
-            <div class="bg-[#141622] rounded-xl p-5 border border-white/5">
-              <div
-                class="text-[#8e93a4] text-[10px] uppercase tracking-widest font-bold mb-1"
-              >
-                Stages
-              </div>
-              <div class="text-[#e94560] font-medium">2 (Reusable)</div>
-            </div>
-          </div>
-
-          <a
-            href="#"
-            class="bg-[#e94560] text-white px-8 py-3.5 rounded-full text-sm font-medium hover:bg-[#ff4f6d] shadow-[0_0_25px_rgba(233,69,96,0.4)] transition-all inline-block"
-          >
-            View Specifications
-          </a>
-        </div>
-      </section>
-    </main>
-   <!--footer-->
-      <footer class="w-full mt-auto bg-dark pt-12 pb-8 px-6 md:px-8">
-        <div class="max-w-6xl mx-auto">
-         <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-10">
-      <a
-          href="index.html"
-          class="flex items-center gap-2 cursor-pointer hover:scale-105 transition-transform"
-        >
             <span
               class="relative text-3xl transform -rotate-12 group-hover:rotate-0 transition-transform"
-              >🚀</span>
-          <span class=" font-['Space_Grotesk'] font-bold text-xl tracking-wide">COSMOS</span>
-        </a>
-      <nav class="footer-nav flex flex-wrap justify-center gap-6 text-sm text-gray-400">
-        <a href="./index.html" class="hover:text-[#e94560] transition">Home</a>
-        <a href="./missions.html" class="hover:text-[#e94560] transition">Missions</a>
-        <a href="./spacecraft.html" class="hover:text-[#e94560] transition">Spacecraft</a>
-        <a href="./gallery.html" class="hover:text-[#e94560] transition">Gallery</a>
-      </nav>
-      <div class="footer-social flex gap-4">
-        <div class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#e94560] cursor-pointer transition border border-white/10">
-          <span class="text-xs font-bold text-gray-400">𝕏</span>
+              >🚀</span
+            >
+            <span
+              class="font-['Space_Grotesk'] font-bold text-xl tracking-wide text-white"
+              >COSMOS</span
+            >
+          </a>
+          <nav
+            class="footer-nav flex flex-wrap justify-center gap-6 text-sm text-gray-400"
+          >
+            <a href="./index.html" class="hover:text-[#e94560] transition"
+              >Home</a
+            >
+            <a href="./missions.html" class="hover:text-[#e94560] transition"
+              >Missions</a
+            >
+            <a href="./spacecraft.html" class="hover:text-[#e94560] transition"
+              >Spacecraft</a
+            >
+            <a href="./gallery.html" class="hover:text-[#e94560] transition"
+              >Gallery</a
+            >
+          </nav>
+          <div class="footer-social flex gap-4">
+            <div
+              class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#e94560] cursor-pointer transition border border-white/10"
+            >
+              <span class="text-xs font-bold text-gray-400 hover:text-white"
+                >𝕏</span
+              >
+            </div>
+            <div
+              class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#e94560] cursor-pointer transition border border-white/10"
+            >
+              <span class="text-xs font-bold text-gray-400 hover:text-white"
+                >in</span
+              >
+            </div>
+            <div
+              class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#e94560] cursor-pointer transition border border-white/10"
+            >
+              <span class="text-xs text-gray-400 hover:text-white">📷</span>
+            </div>
+            <div
+              class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#e94560] cursor-pointer transition border border-white/10"
+            >
+              <span class="text-xs text-gray-400 hover:text-white">▶</span>
+            </div>
+          </div>
         </div>
-        <div class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#e94560] cursor-pointer transition border border-white/10">
-          <span class="text-xs font-bold text-gray-400">in</span>
-        </div>
-        <div class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#e94560] cursor-pointer transition border border-white/10">
-          <span class="text-xs">📷</span>
-        </div>
-        <div class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#e94560] cursor-pointer transition border border-white/10">
-          <span class="text-xs">▶</span>
+        <hr class="border-white/10 mb-8" />
+        <div class="text-center text-xs text-gray-500">
+          <p>© 2026 Cosmos Space Exploration. All rights reserved.</p>
+          <p class="mt-2 italic text-gray-600">Designed by Vince</p>
         </div>
       </div>
+    </footer>
     </div>
-    <hr class="border-white/10 mb-8" />
-    <div class="text-center text-xs text-gray-500">
-        <p>© 2026 Cosmos Space Exploration. All rights reserved.</p>
-        <p class="mt-2 italic text-gray-600">Designed by Vince</p>
-    </div>
-  </div>
-</footer>
-<!--script-->
-    <script src="js/script.js"></script>
-<script>
-  const menuBtn = document.getElementById('menuBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
 
-  menuBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    
-    const isOpen = mobileMenu.classList.contains('opacity-100');
+    <script>
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
 
-    if (isOpen) {
-      closeNav();
-    } else {
-      openNav();
-    }
-  });
-  function openNav() {
-    mobileMenu.classList.remove('invisible', 'opacity-0', '-translate-y-4');
-    mobileMenu.classList.add('opacity-100', 'translate-y-0');
-  }
-  function closeNav() {
-    mobileMenu.classList.add('invisible', 'opacity-0', '-translate-y-4');
-    mobileMenu.classList.remove('opacity-100', 'translate-y-0');
-  }
-  window.addEventListener('click', () => {
-    closeNav();
-  });
-  mobileMenu.addEventListener('click', (e) => {
-    e.stopPropagation();
-  });
-</script>
+      menuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = mobileMenu.classList.contains('opacity-100');
+        if (isOpen) closeNav(); else openNav();
+      });
+
+      function openNav() {
+        mobileMenu.classList.remove('invisible', 'opacity-0', '-translate-y-4');
+        mobileMenu.classList.add('opacity-100', 'translate-y-0');
+      }
+
+      function closeNav() {
+        mobileMenu.classList.add('invisible', 'opacity-0', '-translate-y-4');
+        mobileMenu.classList.remove('opacity-100', 'translate-y-0');
+      }
+
+      window.addEventListener('click', () => closeNav());
+    </script>
   </body>
 </html>

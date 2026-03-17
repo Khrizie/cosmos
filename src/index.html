@@ -37,21 +37,24 @@
         position: fixed;
         top: 0;
         left: 0;
-        width: 200vw;
-        height: 100vh;
+        width: 150%;
+        height: 150%;
         z-index: 0;
         pointer-events: none;
 
         background-image:
-          radial-gradient(1px 1px at 15% 20%, #fff, transparent),
-          radial-gradient(1px 1px at 30% 65%, #fff, transparent),
-          radial-gradient(2px 2px at 50% 35%, #fff, transparent),
-          radial-gradient(1px 1px at 65% 80%, #fff, transparent),
-          radial-gradient(2px 2px at 90% 60%, #fff, transparent);
+          radial-gradient(1px 1px at 10% 10%, #fff, transparent),
+          radial-gradient(1px 1px at 20% 50%, #fff, transparent),
+          radial-gradient(2px 2px at 40% 80%, #fff, transparent),
+          radial-gradient(1.5px 1.5px at 60% 20%, #fff, transparent),
+          radial-gradient(1px 1px at 80% 40%, #fff, transparent),
+          radial-gradient(2px 2px at 30% 90%, #fff, transparent),
+          radial-gradient(1px 1px at 70% 70%, #fff, transparent),
+          radial-gradient(1.5px 1.5px at 90% 10%, #fff, transparent);
 
-        background-size: 250px 250px;
-        opacity: 0.3;
-        animation: moveStars 100s linear infinite;
+        background-size: 300px 300px;
+        opacity: 0.6;
+        animation: moveStars 40s linear infinite;
       }
 
       @keyframes moveStars {
@@ -59,7 +62,7 @@
           transform: translate(0, 0);
         }
         to {
-          transform: translate(-50px, -100px);
+          transform: translate(-300px, -300px);
         }
       }
 
@@ -129,7 +132,7 @@
   <body class="relative overflow-x-hidden">
     <div class="stars-bg"></div>
 
-    <!--header-->
+   <!--header-->
     <header>
       <div class="relative z-10 w-full flex flex-col flex-grow">
         <nav
@@ -179,12 +182,12 @@
           <div class="hidden md:flex gap-8 text-sm font-medium">
             <a
               href="index.html"
-              class="text-[#eaeaea]  border-b-2 border-[#e94560]  transition-colors pb-1"
+              class="text-[#eaeaea] border-b-2 border-[#e94560] transition-colors pb-1"
               >Home</a
             >
             <a
               href="missions.html"
-              class="text-[#a0a0a0] hover:text-[#eaeaea] pb-1"
+              class="text-[#a0a0a0]  hover:text-[#eaeaea] pb-1"
               >Missions</a
             >
             <a
@@ -239,6 +242,28 @@
     <main
       class="relative w-full flex-grow flex items-center justify-center min-h-[75vh] py-16 overflow-hidden"
     >
+        <div
+          class="absolute right-[-300px] top-1/2 -translate-y-1/2 w-[1100px] h-[1100px] hidden lg:block pointer-events-none opacity-90 z-0"
+        >
+          <div
+            class="absolute inset-[29%] border border-white/5 rounded-full"
+          ></div>
+          <div
+            class="absolute inset-[33%] border border-white/5 rounded-full"
+          ></div>
+
+          <div class="absolute inset-[37%] border border-white/5 rounded-full">
+            <div class="absolute inset-0 animate-[spin_30s_linear_infinite]">
+              <div
+                class="absolute top-[-10px] left-1/2 -translate-x-1/2 w-4 h-4 bg-[#e94560] rounded-full shadow-[0_0_30px_rgba(233,69,96,0.3)]"
+              ></div>
+            </div>
+          </div>
+
+          <div
+            class="absolute inset-[40%] bg-gradient-to-r from-[#1c2135] to-[#0a0e17] rounded-full shadow-[inset_-40px_-40px_80px_rgba(0,0,0,0.8),0_0_30px_rgba(233,69,96,0.3)]"
+          ></div>
+        </div>
       <div
         class="relative z-10 flex flex-col items-center text-center w-full max-w-5xl mx-auto px-4"
       >
@@ -250,7 +275,7 @@
             background: rgba(10, 10, 15, 0.5);
           "
         >
-          🚀 Exploring the Unknown
+          🌌 Exploring the Unknown
         </div>
 
         <h1
